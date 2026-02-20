@@ -1,0 +1,108 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #000;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* NAV */
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 20px 10%;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle at center, #1a1aff, #000);
+  z-index: -1;
+  transform: scale(1.2);
+  transition: transform 0.5s ease-out;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  letter-spacing: -1px;
+}
+
+.hero-content p {
+  margin-top: 20px;
+  opacity: 0.7;
+}
+
+/* SECTIONS */
+.section {
+  padding: 200px 10%;
+  text-align: center;
+}
+
+.section.dark {
+  background: #0a0a0a;
+}
+
+/* PARALLAX */
+.parallax {
+  background: linear-gradient(180deg, #000, #111);
+}
+
+/* REVEAL EFFECT */
+.reveal {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 1.2s cubic-bezier(.19,1,.22,1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOTION TEXT */
+.motion-text {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.motion-text.delay {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 120px 10%;
+  }
+}
